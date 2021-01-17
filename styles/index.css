@@ -5,6 +5,12 @@ article a {
     color: rgb(49, 49, 182);
     text-decoration: underline;
 }
+@layer base {
+    body, input, textarea {
+        @apply bg-gray-500
+    }
+}
+
 /* purgecss end ignore */
 @tailwind utilities;
 

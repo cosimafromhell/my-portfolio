@@ -5,8 +5,10 @@ import { imageBuilder } from '../lib/sanity'
 export default function CoverImage({ title, url, imageObject, slug }) {
   const image = (
     <img
-      width={1240}
-      height={540}
+      // width={1240}
+      // height={540}
+      width="100%"
+      height="auto"
       alt={`Cover Image for ${title}`}
       className={cn('shadow-small', {
         'hover:shadow-medium transition-shadow duration-200': slug,
@@ -16,14 +18,14 @@ export default function CoverImage({ title, url, imageObject, slug }) {
   )
 
   return (
-    <div className="-mx-5 sm:mx-0">
+    <div className="sm:mx-0">
       {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        <Link as={`/blog/${slug}`} href="/blog/[slug]">
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (
-        image
-      )}
+          image
+        )}
     </div>
   )
 }

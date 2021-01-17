@@ -1,6 +1,10 @@
 module.exports = {
   theme: {
     extend: {
+      margin: {
+        '96': '24rem',
+        '-9': '-2.25rem'
+      },
       colors: {
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
