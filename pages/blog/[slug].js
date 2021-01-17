@@ -14,6 +14,7 @@ import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import Form from '../../components/CommentForm'
 import HeadContainer from '../../components/HeadContainer';
+import Intro from '../../components/intro';
 
 export default function Post({ post, morePosts, preview }) {
     const router = useRouter()
@@ -23,6 +24,7 @@ export default function Post({ post, morePosts, preview }) {
     return (
         <Layout preview={preview}>
             <HeadContainer>
+                <Intro title="Blog" />
                 <Header />
             </HeadContainer>
             <Container>
@@ -30,7 +32,7 @@ export default function Post({ post, morePosts, preview }) {
                     <PostTitle>Loading…</PostTitle>
                 ) : (
                         <>
-                            <article>
+                            <article className="mt-16">
                                 <Head>
                                     <title>
                                         {post.title} | cfh's Blog
