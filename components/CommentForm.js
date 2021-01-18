@@ -29,14 +29,9 @@ export default function Form({ _id }) {
   if (hasSubmitted) {
     return (
       <>
-        <h3>コメントありがとうございます！</h3>
-        <ul>
-          <li>
-            名前: {formData.name} <br />
-          メールアドレス: {formData.email} <br />
-          コメント: {formData.comment}
-          </li>
-        </ul>
+        <h1 className="text-2xl md:text-4xl font-bold tracking-tighter leading-tight mb-2">
+          投稿が完了しました。
+        </h1>
       </>)
   }
 
@@ -59,5 +54,5 @@ export default function Form({ _id }) {
       {errors.exampleRequired && <span>This field is required</span>}
       <input type="submit" className="shadow bg-black hover:bg-yellow-400 hover:text-black text-white font-bold py-2 px-4 rounded cursor-pointer" />
     </form>
-  )
+  );
 }

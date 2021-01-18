@@ -9,9 +9,12 @@ import AchievementSection from '../../components/AchievementSection';
 import { getAllPostsForBlog } from '../../lib/api';
 
 export default function Index({ allPosts, preview }) {
+    // 持っている全記事データと検索結果を分けるため。
     const [postsState, setPostsState] = useState(allPosts);
     const handleSearchPosts = function (posts, word) {
-        const result = posts.filter(p => p.title.includes(word) | toPlainText(p.body).includes(word));
+        word = word.toUpperCase();
+        const result = posts.filter(p => p.title.toUpperCase().includes(word) |
+            toPlainText(p.body).toUpperCase().includes(word));
         setPostsState(result);
     };
     const toPlainText = function (blocks = []) {
@@ -55,4 +58,4 @@ export async function getStaticProps({ preview = false }) {
         props: { allPosts, preview },
         revalidate: 1
     }
-}
+} 

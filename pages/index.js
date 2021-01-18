@@ -16,8 +16,6 @@ const introduction = `未経験で某IT企業に就職後はフロントエン�
 現在はReact、Next.jsを主に使用したWebフロントエンジニアとしてフリーランスで活動中。`;
 
 export default function Index({ allPosts, preview }) {
-  // const heroPost = allPosts[0]
-  // const morePosts = allPosts.slice(1)
   const headPosts = allPosts.slice(0, 6);
   return (
     <>
@@ -36,8 +34,11 @@ export default function Index({ allPosts, preview }) {
         <Container>
           {/* 仮置としてブログの記事を出力するようにしている。 */}
           {headPosts.length > 0 &&
-            <AchievementSection posts={headPosts} />}
-          <GotoBlogButton />
+            <>
+              <AchievementSection posts={headPosts} />
+              <GotoBlogButton />
+            </>
+          }
         </Container>
       </Layout>
     </>
